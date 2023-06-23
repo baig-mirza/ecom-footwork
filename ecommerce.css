@@ -1,0 +1,478 @@
+
+.navbar-brand img
+{
+  width: 125px;
+}
+.nav-item
+{
+  padding: 0 17px;
+}
+.nav-link
+{
+  font-size: 1.1rem;
+}
+
+.navbar-expand {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    // stylelint-disable-next-line scss/selector-no-union-class-name
+    &#{$infix} {
+      @include media-breakpoint-up($next) {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+
+        .navbar-nav {
+          flex-direction: row;
+
+          .dropdown-menu {
+            position: absolute;
+          }
+
+          .nav-link {
+            padding-right: var(--#{$prefix}navbar-nav-link-padding-x);
+            padding-left: var(--#{$prefix}navbar-nav-link-padding-x);
+          }
+        }
+
+        .navbar-nav-scroll {
+          overflow: visible;
+        }
+
+        .navbar-collapse {
+          display: flex !important; // stylelint-disable-line declaration-no-important
+          flex-basis: auto;
+        }
+
+        .navbar-toggler {
+          display: none;
+        }
+
+        .offcanvas {
+          // stylelint-disable declaration-no-important
+          position: static;
+          z-index: auto;
+          flex-grow: 1;
+          width: auto !important;
+          height: auto !important;
+          visibility: visible !important;
+          background-color: transparent !important;
+          border: 0 !important;
+          transform: none !important;
+          @include box-shadow(none);
+          @include transition(none);
+          // stylelint-enable declaration-no-important
+
+          .offcanvas-header {
+            display: none;
+          }
+
+          .offcanvas-body {
+            display: flex;
+            flex-grow: 0;
+            padding: 0;
+            overflow-y: visible;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* top container after navbar section */
+
+#title
+{
+  background: radial-gradient(#fff,#ffd6d6);
+}
+#title img
+{
+  max-width: 100%;
+}
+.header
+{
+  padding: 12% 10% 3%;
+}
+.brand-description
+{
+  font-size: 50px;
+}
+.brand-text
+{
+  color: #8f8f8f;
+}
+.explore
+{
+  margin-top: 10px;
+  background-color: #ff523b;
+  border: none;
+  border-radius: 25px;
+}
+
+
+/* inspiring images section */
+
+#inspiring-images
+{
+  padding: 7% 15%;
+}
+.image-1
+{
+  max-width: 100%;
+}
+.header-2
+{
+  text-align: center;
+  color: #555;
+  padding: 1% 0;
+  position: relative;
+}
+.header-2::after
+{
+  content: ' ';
+  background-color: #ff523b;
+  width: 80px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.top-mg
+{
+  padding-top: 4%;
+}
+.top-mg:hover
+{
+  transform: translateY(-5px);
+  transition: 0.5s;
+}
+.top-mg .fa
+{
+  color: #ff523b;
+}
+h5
+{
+  color: #8f8f8f;
+  padding-top: 2%;
+  font-weight: normal;
+}
+h6
+{
+  color: #8f8f8f;
+  padding-top: 4%;
+}
+
+/* Latest Products section */
+
+#latest-products
+{
+  padding: 7% 15%;
+}
+
+
+/* offer section */
+
+#offer
+{
+  background: radial-gradient(#fff,#ffd6d6);
+  padding: 7% 15% 0;
+}
+.exlusive-product
+{
+  max-width: 100%;
+}
+.availablility-notice
+{
+  font-size: 16.28px;
+  color: #8f8f8f;
+}
+.exclusive-product-name
+{
+  font-weight: bold;
+  margin-top: 70px;
+}
+.offer-text
+{
+  color: #8f8f8f;
+  margin-top: 30px;
+}
+.buy
+{
+  margin-top: 30px;
+  background-color: #ff523b;
+  border-radius: 25px;
+}
+.payment
+{
+  text-decoration: none;
+  color: white;
+}
+.pay2
+{
+  padding: 7% 13%;
+}
+.check4
+{
+  color: white;
+  background-color: #27ae60;
+  margin-top: 25px;
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  border-radius: 2px;
+}
+/* testimonials section */
+#testimonials
+{
+  text-align: center;
+  padding-top: 15%;
+}
+#testimonials .col-lg-4
+{
+  cursor: pointer;
+  padding: 40px 20px;
+  box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+}
+.testimonials-text
+{
+  color: #8f8f8f;
+}
+.test .fa
+{
+  color: #ff523b;
+}
+#testimonials img
+{
+  border-radius: 50%;
+  width: 100px;
+}
+#testimonials .col-lg-4:hover
+{
+  transform: translateY(-10px);
+  transition: 0.5s
+}
+.reveal
+{
+  transform: translateY(10px);
+  opacity: 0;
+  transition: 5s ease;
+}
+.reveal.active
+{
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+/* mid-footer section */
+
+#mid-footer
+{
+  padding: 8% 15%;
+}
+#mid-footer img
+{
+  filter: grayscale(100%);
+}
+#mid-footer img:hover
+{
+  filter: grayscale(0%);
+}
+
+/* bottom-footer */
+
+#bottom-footer
+{
+  background-color: Black;
+  padding: 7% 5%;
+}
+#bottom-footer h4
+{
+  color: white;
+}
+.footer-text
+{
+  color: grey;
+  padding: 5% 0;
+}
+/* Red Printed T-Shirt Page styles */
+
+#red-shirtContainer
+{
+  padding: 7% 15%;
+}
+#ProductImg
+{
+  width: 400px;
+  height: 400px;
+}
+.shirtImgLabel
+{
+  color: #8f8f8f;
+  font-size: 1.2rem;
+}
+.shirtImgPrice
+{
+  margin-top: 30px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #8f8f8f;
+}
+.select
+{
+  border-color: #ff523b;
+  padding: 2%;
+}
+.quantity
+{
+  border: 1px solid;
+  border-color: #ff523b;
+  width: 50px;
+}
+.addToCart
+{
+  background-color: #ff523b;
+  border: none;
+  border-radius: 25px;
+}
+.shirtGallery
+{
+  margin-top: 10px;
+  width: 100px;
+}
+
+/* related products section */
+
+#related-products
+{
+  padding: 7% 10% 4%;
+}
+.viewMore
+{
+  margin-left: 280px;
+}
+
+/* view-more section */
+
+#view-more
+{
+  padding: 0 12% 5% 9%;
+}
+.Next
+{
+
+  width: 100%;
+}
+.previous
+{
+  background-color: #ff523b;
+  border: none;
+  border-radius: 25px;
+  opacity: 0;
+}
+
+/* hrx Shoes styles */
+
+#hrxShoes-container
+{
+  padding: 7% 15%;
+}
+.addToCart-2
+{
+  background-color: #ff523b;
+  border: none;
+  border-radius: 25px;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1022px)
+{
+
+  #title
+  {
+    text-align: center;
+  }
+  .image-1
+  {
+    padding: 5% 0;
+  }
+  #offer
+  {
+    text-align: center;
+  }
+  .availablility-notice
+  {
+    margin-top: 30px;
+  }
+  #mid-footer
+  {
+    text-align: center;
+  }
+  #bottom-footer
+  {
+    text-align: center;
+  }
+  .op
+  {
+    margin-top: 50px;
+  }
+  #red-shirtContainer
+  {
+    text-align: center;
+  }
+  .shirtImgLabel
+  {
+    margin-top: 20px;
+  }
+  #related-products
+  {
+    text-align: center;
+  }
+  .viewMore
+  {
+    display: none;
+  }
+  #view-More{
+    text-align: center;
+  }
+  .previous
+  {
+    opacity: 1;
+    margin-top: 5%;
+  }
+  #featured-products, #hrxShoes-container
+  {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1023px max-width: 1210px)
+{
+  .s
+  {
+    padding-left: 12%;
+  }
+}
+
+
+
+
+
+
+
+
+@media (min-width: 1400px)
+{
+  #red-shirtContainer
+  {
+    padding: 7% 25%;
+  }
+};
